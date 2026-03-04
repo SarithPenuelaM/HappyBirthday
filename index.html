@@ -731,6 +731,110 @@
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
+        /* Sección del Mapa */
+        .map-section {
+            padding: 60px 20px;
+            background: linear-gradient(180deg, white 0%, var(--bg-light) 100%);
+        }
+
+        .map-container {
+            background: white;
+            border-radius: 24px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            max-width: 900px;
+            margin: 0 auto;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .map-container:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .map-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px dashed var(--accent);
+        }
+
+        .map-header .material-icons {
+            font-size: 32px;
+            color: var(--primary);
+        }
+
+        .map-header-text h3 {
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+
+        .map-header-text p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .map-wrapper {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 3px solid var(--secondary);
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 350px;
+            border: none;
+            display: block;
+        }
+
+        .map-footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .map-footer a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--secondary) 0%, #45B7AF 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
+        }
+
+        .map-footer a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(78, 205, 196, 0.5);
+        }
+
+        .map-footer a .material-icons {
+            font-size: 20px;
+        }
+
+        /* Responsive del Mapa */
+        @media (max-width: 768px) {
+            .map-wrapper iframe {
+                height: 280px;
+            }
+
+            .map-container {
+                padding: 20px 15px;
+            }
+
+            .map-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero {
@@ -813,11 +917,11 @@
                     <h3>Hora </h3>
                     <p>Todo el día!!!</p>
                 </div>
-                <div class="info-card">
+                <!--<div class="info-card">
                     <span class="material-icons">place</span>
                     <h3>Lugar</h3>
-                    <p>Finca de Theo 🏠...  Actualización por GPS</p>
-                </div>
+                    <p>Finca de Theo 🏠 - Cerca de la Estación de Policía, Chinauta</p>
+                </div> -->
                 <div class="info-card">
                     <span class="material-icons">pets</span>
                     <h3>Dress Code</h3>
@@ -827,6 +931,40 @@
                     <span class="material-icons">pets</span>
                     <h3>Regalo</h3>
                     <p>Cardial B 10mg (Preguntale a mi mami...)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección del Mapa -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="material-icons">location_on</span>
+                ¿Cómo Llegar?
+            </h2>
+            <div class="map-container">
+                <div class="map-header">
+                    <span class="material-icons">place</span>
+                    <div class="map-header-text">
+                        <h3>📍 Ubicación: Cerca de la Estación de Policía, Chinauta</h3>
+                        <p>Fusagasugá, Cundinamarca, Colombia 🇨🇴</p>
+                    </div>
+                </div>
+                <div class="map-wrapper">
+                    <iframe 
+                        src="https://www.google.com/maps?q=Estacion+de+Policia+Chinauta,+Fusagasuga,+Cundinamarca,+Colombia&z=15&output=embed"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Mapa de ubicación - Estación de Policía Chinauta">
+                    </iframe>
+                </div>
+                <div class="map-footer">
+                    <a href="https://www.google.com/maps/search/Estacion+de+Policia+Chinauta,+Fusagasuga,+Cundinamarca,+Colombia" target="_blank" rel="noopener">
+                        <span class="material-icons">directions</span>
+                        Abrir en Google Maps
+                    </a>
                 </div>
             </div>
         </div>
